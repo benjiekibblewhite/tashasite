@@ -8,6 +8,7 @@ body {
     --secondary-color: rgb(203, 167, 83);
     --footer-color: rgb(243, 243, 243);
     --link-color: rgb(0, 0, 255);
+    --text-grey: rgb(151, 151, 151);
     background-color: rgb(251, 251, 251);
     color: var(--primary-color);
     font-family: 'Lato', sans-serif;
@@ -19,14 +20,26 @@ a {
     font-weight: 700;
 }
 
+p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.8rem;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5 {
     font-family: 'Lato', sans-serif;
-    font-weight: 700;
     color: var(--primary-color);
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+h4, h5 {
+    font-weight: 400;
 }
 
 nav {
@@ -48,6 +61,11 @@ header,
     margin: 24px auto 0;
 }
 
+
+
+/****
+Utilities
+****/
 svg.bottom-border {
     height: 10px;
     width: 100%;
@@ -56,6 +74,9 @@ svg.bottom-border {
     overflow: visible;
 }
 
+.img-responsive {
+    width: 100%;
+}
 .container-nav {
     height: 100%;
     display: -webkit-box;
@@ -84,8 +105,8 @@ svg.bottom-border {
     display: inline;
     color: var(--primary-color);
     text-decoration: none;
-    margin: 0 .1em;
-    font-size: 1.1em;
+    margin: 0.1rem;
+    font-size: 1.1rem;
     font-weight: 400;
 }
 
@@ -148,9 +169,9 @@ svg.bottom-border {
 
 
 .project-name a {
-    font-size: 1em;
+    font-size: 1rem;
     font-weight: 700;
-    margin: 1em 0;
+    margin: 1rem 0;
     display: block;
     color: white;
 }
@@ -239,7 +260,6 @@ svg.bottom-border {
 }
 
 .two-column {
-    font-family: 'Libre Baskerville', serif;
     margin: 24px auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -251,6 +271,10 @@ svg.bottom-border {
     flex-wrap: wrap;
 }
 
+.two-column p {
+    font-size: 1rem;
+    color: var(--text-grey);
+}
 .two-column .column {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 100%;
@@ -282,15 +306,18 @@ svg.bottom-border {
 }
 
 .illustration-bottom-page {
-    width: 100%;
     margin: 24px 0;
 }
 
+
 footer {
-    margin: -88px 0px;
     background-color: var(--footer-color);
     position: relative;
     z-index: -1;
+}
+
+footer.is-front-page-footer {
+    margin: -88px 0px;
 }
 
 
@@ -305,7 +332,7 @@ footer:before {
     /* -height */
     left: 0;
     right: 0;
-    background: -webkit-linear-gradient( 45deg, var(--footer-color) 33.333%, transparent 33.333%, transparent 66.667%, var(--footer-color) 66.667%), -webkit-linear-gradient( 135deg, var(--footer-color) 33.333%, transparent 33.333%, transparent 66.667%, var(--footer-color) 66.667%);
+    background: -webkit-linear-gradient( 45deg, var(-- -color) 33.333%, transparent 33.333%, transparent 66.667%, var(--footer-color) 66.667%), -webkit-linear-gradient( 135deg, var(--footer-color) 33.333%, transparent 33.333%, transparent 66.667%, var(--footer-color) 66.667%);
     background: -o-linear-gradient( 45deg, var(--footer-color) 33.333%, transparent 33.333%, transparent 66.667%, var(--footer-color) 66.667%), -o-linear-gradient( 135deg, var(--footer-color) 33.333%, transparent 33.333%, transparent 66.667%, var(--footer-color) 66.667%);
     background: linear-gradient( 45deg, var(--footer-color) 33.333%, transparent 33.333%, transparent 66.667%, var(--footer-color) 66.667%), linear-gradient( -45deg, var(--footer-color) 33.333%, transparent 33.333%, transparent 66.667%, var(--footer-color) 66.667%);
     background-size: 8px 20px;
@@ -337,8 +364,7 @@ footer:before {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
     order: 1;
-    color: rgb(151, 151, 151);
-    font-size: 0.8em;
+    color: var(--text-grey);
 }
 
 .footer-left_disclaimer {
@@ -406,11 +432,11 @@ footer:before {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 100%;
     flex: 0 1 100%;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 
-/* vertical centre text in div */
+/* vertical centers text in div */
 
 .instagram-title p {
     position: absolute;
@@ -440,4 +466,85 @@ footer:before {
         -ms-flex: 0 1 20%;
         flex: 0 1 20%;
     }
+}
+
+/*****
+Portfolio Single Page
+*****/
+
+#portfolio-single {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.portfolio-images, .portfolio-info {
+    flex: 1 1 100%;
+}
+
+.portfolio-info {
+    padding-left: 2rem;
+}
+
+.portfolio-info-title {
+    text-align: center;
+}
+
+.portfolio-info-tags {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0.5rem;
+    border: var(--secondary-color) 2px solid;
+    border-radius: 2px;
+}
+
+.portfolio-info-section {
+    padding-left: 1rem;
+    overflow: hidden;
+}
+
+.portfolio-info-section_title {
+    font-size: 1.1rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    padding: 0;
+    cursor: pointer;
+}
+
+.portfolio-info-section_title:before {
+    content: '+';
+    margin-left: -1rem;
+    width: 1rem;
+    display: inline-block;
+}
+
+.portfolio-info-section_text {
+    color: var(--text-grey);
+    /*display: none;*/
+    overflow: hidden;
+}
+
+.portfolio-info-section_text p {
+    transform: translateY(-110%);
+    transition: all 0.2s ease;
+    display: none;
+}
+
+.info-text_visible p {
+    display: block;
+    transform: translateY(0%);
+}
+
+@media (min-width: 850px) {
+    .portfolio-images {
+        flex-basis: 70%;
+    }
+    
+    .portfolio-info {
+        flex-basis: 30%;
+    }
+    
 }
