@@ -1,12 +1,6 @@
-const portfolioInfoSectionTitles = document.querySelectorAll('.portfolio-info-section_title');
-
-portfolioInfoSectionTitles.forEach((title)=> {
-    title.addEventListener('click', showSectionText);
+$('.portfolio-info-section_title').click(function(){
+    const textToShow = $(this).siblings();
+    $('.portfolio-info-section_text').not(textToShow).slideUp(100);
+   $(textToShow).slideToggle(100);
 })
-
-function showSectionText(e) {
-    const parent = this.parentNode;
-    parent.classList.toggle('info-text_visible');
-}
-
 
