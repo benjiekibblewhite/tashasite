@@ -9,6 +9,8 @@ body {
     --footer-color: rgb(243, 243, 243);
     --link-color: rgb(0, 0, 255);
     --text-grey: rgb(151, 151, 151);
+    --libre-font: 'Libre Baskerville', serif;
+    --lato-font:  'Lato', sans-serif;
     background-color: rgb(251, 251, 251);
     color: var(--primary-color);
     font-family: 'Lato', sans-serif;
@@ -482,13 +484,12 @@ Portfolio Single Page
     flex: 1 1 100%;
 }
 
-
-
 .portfolio-info-title {
+    font-weight: 400;
     text-align: center;
 }
-
 .portfolio-info-tags {
+    margin-bottom: 20px;
     font-size: 0.9rem;
     text-align: center;
     padding: 0.5rem;
@@ -537,7 +538,7 @@ Portfolio Single Page
        .portfolio-images {
         flex-basis: 60%;
     }
-    
+
     .portfolio-info {
         flex-basis: 40%;
         padding-left: 2rem;
@@ -548,9 +549,43 @@ Portfolio Single Page
     .portfolio-images {
         flex-basis: 70%;
     }
-    
+
     .portfolio-info {
         flex-basis: 30%;
     }
-    
+
+}
+
+.portfolio-info-interactives {
+    margin-top: 40px;
+}
+
+.portfolio-info-interactives_share {
+    color: blue;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.portfolio-navigation {
+    background: transparent;
+    font-family: var(--lato-font);
+    color: var(--primary-color);
+    font-weight: 700;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    padding: 0;
+    border: 2px solid var(--secondary-color);
+    border-radius: 100%;
+    position: fixed;
+    top: 104px;
+    cursor: pointer;
+}
+
+.portfolio-navigation_previous {
+    left: 2.5%;
+}
+
+.portfolio-navigation_next {
+    right: 2.5%;
 }
