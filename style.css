@@ -490,7 +490,7 @@ Portfolio Single Page
 }
 .portfolio-info-tags {
     margin-bottom: 20px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-align: center;
     padding: 0.5rem;
     border: var(--secondary-color) 2px solid;
@@ -558,12 +558,24 @@ Portfolio Single Page
 
 .portfolio-info-interactives {
     margin-top: 40px;
+    position: relative;
 }
+
 
 .portfolio-info-interactives_share {
     color: blue;
     font-weight: 400;
-    font-size: 1rem;
+    padding-left: 2rem;
+    
+}
+
+.portfolio-interactives_sharearrow{
+    font-size: 1.6rem;
+    font-family: 'Zapf Dingbats';
+    /* Positions arrow so pointer is in the middle of "SHARE" text*/
+    position: absolute;
+    left: 0;
+    bottom: -0.45rem;
 }
 
 .portfolio-navigation {
