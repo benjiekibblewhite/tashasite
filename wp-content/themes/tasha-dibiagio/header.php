@@ -11,7 +11,7 @@
 		<nav>
 			<div class="container-nav left-side-nav">
 			    <a href="<?php bloginfo('url'); ?>">
-				<img class="nav-logo"  src="./assets/Large-Logo.png">
+				<?php if ( function_exists( 'the_custom_logo' ) ) { the_custom_logo(); } ?>
 				</a>
 			</div>
 			<div class="container-nav right-side-nav">

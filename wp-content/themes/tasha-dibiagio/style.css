@@ -18,7 +18,7 @@ body {
     --link-color: rgb(0, 0, 255);
     --text-grey: rgb(151, 151, 151);
     --libre-font: 'Libre Baskerville', serif;
-    --lato-font:  'Lato', sans-serif;
+    --lato-font: 'Lato', sans-serif;
     background-color: rgb(251, 251, 251);
     color: var(--primary-color);
     font-family: 'Lato', sans-serif;
@@ -44,11 +44,14 @@ h5 {
     color: var(--primary-color);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 700;
 }
 
-h4, h5 {
+h4,
+h5 {
     font-weight: 400;
 }
 
@@ -76,6 +79,7 @@ header,
 /****
 Utilities
 ****/
+
 svg.bottom-border {
     height: 10px;
     width: 100%;
@@ -87,6 +91,7 @@ svg.bottom-border {
 .img-responsive {
     width: 100%;
 }
+
 .container-nav {
     height: 100%;
     display: -webkit-box;
@@ -104,7 +109,7 @@ svg.bottom-border {
     width: 50%;
 }
 
-.nav-logo {
+.custom-logo {
     height: 64px;
 }
 
@@ -157,8 +162,6 @@ svg.bottom-border {
     height: 40vw;
     font-family: Lato;
     margin: 10px;
-    background: url(./assets/Portfolio-35.jpg);
-    background-size: cover;
     padding: 10px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -175,7 +178,7 @@ svg.bottom-border {
 
 
 
-.project-name a {
+.project-name {
     font-size: 1rem;
     font-weight: 700;
     margin: 1rem 0;
@@ -203,18 +206,19 @@ svg.bottom-border {
 }
 
 @media(min-width: 700px) {
-    .project{
-    flex: 1 0 30vw;
-    height: 30vw;
+    .project {
+        flex: 1 0 30vw;
+        height: 30vw;
     }
 }
 
 @media(min-width: 1100px) {
     .project {
-    flex: 1 0 20vw;
-    height: 20vw;
+        flex: 1 0 20vw;
+        height: 20vw;
     }
 }
+
 @supports(display: grid) {
     #front-page_portfolio-grid {
         display: -ms-grid;
@@ -282,6 +286,7 @@ svg.bottom-border {
     font-size: 1rem;
     color: var(--text-grey);
 }
+
 .two-column .column {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 100%;
@@ -314,16 +319,18 @@ svg.bottom-border {
 
 .illustration-bottom-page {
     margin: 24px 0;
+    /*these two rules ensure the image is not covered by the footer*/
+    z-index: 2;
+    position: relative;
 }
 
 
 footer {
     background-color: var(--footer-color);
     position: relative;
-    z-index: -1;
 }
 
-footer.is-front-page-footer {
+body.home footer {
     margin: -88px 0px;
 }
 
@@ -375,7 +382,7 @@ footer:before {
 }
 
 .footer-left_disclaimer {
-    margin: 24px 0;
+    margin-bottom: 24px;
 }
 
 .footer-left .heart-icon,
@@ -412,6 +419,7 @@ footer:before {
 
 .instagram-wrapper {
     width: 100%;
+    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -420,58 +428,43 @@ footer:before {
     justify-content: space-between;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    align-items: center;
 }
 
-.instagram-item,
-.instagram-title {
-    height: 96px;
-    width: 96px;
-}
-
-.instagram-item {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-}
 
 .instagram-title {
     position: relative;
-    -webkit-box-flex: 0;
     -ms-flex: 0 1 100%;
-    flex: 0 1 100%;
+    flex: 0 0 100%;
     font-size: 1.2rem;
+    /*margin-left ensures title aligned with instagram images on small screens */
+    margin: 0 0 24px 10px;
 }
 
-
-/* vertical centers text in div */
-
-.instagram-title p {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 30%;
-    margin: auto;
+#ig-block-1 {
+    flex: 1 1 auto;
 }
 
+@media screen and (min-width: 481px) {
+    .ig-item {
+        min-width: 25%;
+    }
+}
 .instagram-title .arrows {
     color: var(--secondary-color);
 }
 
-.instagram-item {
-    border: 1.2px solid var(--primary-color);
-}
 
 @media (min-width: 1100px) {
     .instagram-wrapper {
         -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     }
+
     .instagram-title {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 1 20%;
-        flex: 0 1 20%;
+        -ms-flex: 0 1 120px;
+        flex: 0 0 120px;
+        margin-left: 0;
     }
 }
 
@@ -485,7 +478,8 @@ Portfolio Single Page
     margin-bottom: 40px;
 }
 
-.portfolio-images, .portfolio-info {
+.portfolio-images,
+.portfolio-info {
     flex: 1 1 100%;
 }
 
@@ -493,6 +487,7 @@ Portfolio Single Page
     font-weight: 400;
     text-align: center;
 }
+
 .portfolio-info-tags {
     margin-bottom: 20px;
     font-size: 0.8rem;
@@ -540,7 +535,7 @@ Portfolio Single Page
 }
 
 @media (min-width: 800px) {
-       .portfolio-images {
+    .portfolio-images {
         flex-basis: 60%;
     }
 
@@ -571,10 +566,10 @@ Portfolio Single Page
     color: blue;
     font-weight: 400;
     padding-left: 2rem;
-    
+
 }
 
-.portfolio-interactives_sharearrow{
+.portfolio-interactives_sharearrow {
     font-size: 1.6rem;
     font-family: 'Zapf Dingbats';
     /* Positions arrow so pointer is in the middle of "SHARE" text*/
@@ -599,10 +594,61 @@ Portfolio Single Page
     cursor: pointer;
 }
 
+
+
 .portfolio-navigation_previous {
     left: 2.5%;
 }
 
 .portfolio-navigation_next {
     right: 2.5%;
+}
+
+.portfolio-navigation .fa {
+    font-size: 2rem;
+    padding-bottom: 5px;
+}
+
+.portfolio-navigation_previous .fa {
+    padding-right: 5px;
+}
+
+.portfolio-navigation_next .fa {
+    padding-left: 5px;
+}
+
+/*Styles for BXSlider on Portfolio Single Template*/
+
+.bx-wrapper {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+}
+
+.bx-pager {
+    bottom: 50% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90px;
+    left: 95%;
+    width: 0 !important;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: none !important;
+    height: 12.5px !important;
+    width: 12.5px !important;
+    border: 2px solid var(--secondary-color);
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+    background: var(--secondary-color) !important;
+}
+
+.bx-controls-direction {
+    display: none;
 }
